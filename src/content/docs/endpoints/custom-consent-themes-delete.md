@@ -116,8 +116,54 @@ DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22ac
     "_idx": 1
   },
   {
-    "error": "object_not_found",
+    "error": "custom_consent_theme_not_found",
     "_idx": 2
   }
 ]
 ```
+
+# Example 3
+
+A theme that is still in use
+
+## Request
+
+```http
+DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_12%22%7D%2C%7B%22account_id%22%3A%22acct_123%22%2C%22website_id%22%3A%22web_123%22%2C%22id%22%3A%22cct_123%22%7D%5D
+```
+
+## Query
+
+```json
+[
+  {
+    "account_id": "acct_123",
+    "website_id": "web_123",
+    "id": "cct_12"
+  },
+  {
+    "account_id": "acct_123",
+    "website_id": "web_123",
+    "id": "cct_123"
+  }
+]
+```
+
+## Response
+
+```json
+[
+  {
+    "account_id": "acct_123",
+    "website_id": "web_123",
+    "id": "cct_12",
+    "_idx": 0
+  },
+  {
+    "error": "custom_consent_theme_in_use",
+    "_idx": 1
+  }
+]
+```
+
+`custom_consent_theme_in_use` means one of the website's banner regions, or the website's style, still uses the theme, so it was not deleted. Switch them to another theme first, then delete it again.
