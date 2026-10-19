@@ -171,8 +171,56 @@ Multiple request one of which references a nonexistent account.
     "_idx": 0
   },
   {
-    "error": "object_not_found",
+    "error": "account_is_nil",
     "_idx": 1
   }
 ]
 ```
+
+# Example 3
+
+A theme the website does not have
+
+## Request Body
+
+```json
+[
+  {
+    "website_id": "web_123",
+    "account_id": "acct_123",
+    "id": "cct_123",
+    "color": "#000000"
+  },
+  {
+    "website_id": "web_123",
+    "account_id": "acct_123",
+    "id": "cct_999",
+    "color": "#000000"
+  }
+]
+```
+
+## Response
+
+```json
+[
+  {
+    "website_id": "web_123",
+    "account_id": "acct_123",
+    "id": "cct_123",
+    "font_family": "Times New Roman",
+    "font_size": "4",
+    "color": "#000000",
+    "background": "#000000",
+    "btn_background": "#000000",
+    "btn_text_color": "#000000",
+    "_idx": 0
+  },
+  {
+    "error": "custom_consent_theme_not_found",
+    "_idx": 1
+  }
+]
+```
+
+`custom_consent_theme_not_found` means the website has no theme with that `id`, so nothing was changed for that item. The other items are still updated.
