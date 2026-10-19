@@ -55,13 +55,13 @@ DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22ac
   {
     "account_id": "acct_123",
     "website_id": "web_124",
-    "id": "cct_123"
+    "id": "cct_123",
     "_idx": 0
   },
   {
     "account_id": "acct_123",
     "website_id": "web_123",
-    "id": "cct_12"
+    "id": "cct_12",
     "_idx": 1
   }
 ]
@@ -106,8 +106,8 @@ DELETE https://api.termly.io/v1/websites/custom_consent_themes?query=%5B%7B%22ac
   {
     "account_id": "acct_123",
     "website_id": "web_124",
-    "id": "cct_123"
-    "_idx": 0,
+    "id": "cct_123",
+    "_idx": 0
   },
   {
     "account_id": "acct_123",
