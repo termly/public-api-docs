@@ -141,10 +141,11 @@ GET https://api.termly.io/v1/websites/custom_consent_themes?%5B%7B%20%22account_
   "results": [],
   "errors": [
     {
-      "error": "object_not_found",
+      "error": "custom_consent_theme_not_found",
       "account_id": "acct_1234",
       "website_id": "web_123",
-      "id": "cct_1234"
+      "id": "cct_1234",
+      "_idx": 0
     }
   ],
   "paging": {
