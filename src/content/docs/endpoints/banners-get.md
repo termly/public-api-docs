@@ -60,7 +60,7 @@ The results will contain zero or more of the following objects:
       "share_data_to_3rd_party": "<bool>",
       "selected_languages": ["<enum{'el', 'hu', 'pt', 'sv', 'it', 'es', 'en-gb', 'da', 'fi', 'nl', 'fr', 'de', 'pl'}>"],
       "regions": {
-        "<enum{'global', 'us', 'california', 'eu'}>": {
+        "<enum{'global', 'us', 'california', 'eu', 'colorado', 'connecticut', 'delaware', 'indiana', 'iowa', 'kentucky', 'maryland', 'minnesota', 'montana', 'nebraska', 'new_hampshire', 'new_jersey', 'oregon', 'rhode_island', 'tennessee', 'texas', 'utah', 'virginia', 'br', 'ca'}>": {
           "enable_banner": "<bool>",
           "enable_decline_button": "<bool>",
           "enable_cookie_preference_button": "<bool>",
@@ -123,7 +123,7 @@ The results will contain zero or more of the following objects:
 > * `share_data_to_3rd_party`does the Website share data with third parties?
 > * `selected_languages` languages the banner will auto display in based on region
 > * `regions` region specific settings
->   * `<region name>` name of the region for the specific settings
+>   * `<region name>` name of the region for the specific settings. `global` applies to visitors from countries without a dedicated region, and appears as "All other regions" in the dashboard.
 >     * `enable_banner` is the banner enabled?
 >     * `enable_decline_button` is the user allowed to decline consent?
 >     * `enable_cookie_preference_button` show the Cookie Preference Button in the banner?
